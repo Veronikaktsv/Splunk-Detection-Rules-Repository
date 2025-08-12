@@ -1,0 +1,6 @@
+# Uncommon Parent Process for cmd.exe
+index=sysmon EventCode=1 ProcessName="*\\cmd.exe"
+| eval parent=coalesce(ParentImage, ParentProcess)
+| where NOT match(tolower(parent), "(explorer.exe|cmd.exe|powershell.exe|services.exe)")
+| stats count by host, user, parent, ProcessName, CommandLine
+| sort - count
