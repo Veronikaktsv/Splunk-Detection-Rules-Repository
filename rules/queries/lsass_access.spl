@@ -1,0 +1,4 @@
+# LSASS access (ProcessAccess events)
+index=sysmon EventCode=10 TargetImage="*\\lsass.exe"
+| stats count by Host, ProcessName, TargetImage, CallTrace, _time
+| sort - _time
