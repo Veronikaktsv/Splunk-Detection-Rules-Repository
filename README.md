@@ -1,7 +1,5 @@
 # Splunk-Detection-Rules-Repository
 
-# Splunk Detection Rules Repository
-
 A curated repository of Splunk detection rules, ready to import into Splunk Enterprise or Splunk Cloud. This repo is intended for SOC teams and security engineers to detect common adversary behaviors, map to MITRE ATT&CK, and provide documentation for tuning and alerting.
 
 ## Contents
