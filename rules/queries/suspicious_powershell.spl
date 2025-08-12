@@ -1,0 +1,6 @@
+# Suspicious PowerShell Encoded Command
+index=wineventlog OR index=sysmon (EventCode=4688 OR EventCode=1)
+ProcessName="*\\powershell.exe" OR Image="*\\powershell.exe"
+| where match(tostring(CommandLine), "(?i)(-enc|-EncodedCommand|IEX|Invoke-Expression|-nop| -noninteractive)")
+| stats count by host, user, ProcessName, CommandLine, _time
+| sort - count
