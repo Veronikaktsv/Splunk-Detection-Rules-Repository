@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IncidentSummary>
+    <Incident>
+        <ID>INC-2025-001</ID>
+        <Timestamp>2025-08-12T10:32:45Z</Timestamp>
+        <Severity>High</Severity>
+        <Status>Investigating</Status>
+        <DetectedBy>Splunk - Suspicious Process Detection</DetectedBy>
+        <Description>Unusual process execution from an unexpected directory detected.</Description>
+        <Host>WORKSTATION-23</Host>
+        <Username>jdoe</Username>
+        <Tactic>Execution</Tactic>
+        <Technique>T1059 - Command and Scripting Interpreter</Technique>
+        <Evidence>
+            <EventID>4688</EventID>
+            <CommandLine>"C:\Users\jdoe\AppData\Local\Temp\evilscript.ps1"</CommandLine>
+            <ParentProcess>powershell.exe</ParentProcess>
+        </Evidence>
+    </Incident>
+    <Incident>
+        <ID>INC-2025-002</ID>
+        <Timestamp>2025-08-11T15:12:07Z</Timestamp>
+        <Severity>Medium</Severity>
+        <Status>Closed</Status>
+        <DetectedBy>Splunk - Anomalous Login Detection</DetectedBy>
+        <Description>Multiple failed login attempts followed by a successful login from a new geolocation.</Description>
+        <Host>SERVER-12</Host>
+        <Username>admin</Username>
+        <Tactic>Credential Access</Tactic>
+        <Technique>T1110 - Brute Force</Technique>
+        <Evidence>
+            <EventID>4625</EventID>
+            <SourceIP>185.23.45.67</SourceIP>
+            <GeoLocation>Ukraine</GeoLocation>
+        </Evidence>
+    </Incident>
+</IncidentSummary>
