@@ -1,0 +1,17 @@
+<dashboard>
+  <label>Threat Detection Overview</label>
+  <row>
+    <panel>
+      <title>Top Detections</title>
+      <chart>
+        <search>index=sysmon OR index=wineventlog ("powershell.exe" OR "lsass.exe" OR "cmd.exe") | stats count by ProcessName</search>
+      </chart>
+    </panel>
+    <panel>
+      <title>Recent High-Severity Alerts</title>
+      <table>
+        <search>index=notable OR index=alerts | sort -_time | head 20</search>
+      </table>
+    </panel>
+  </row>
+</dashboard>
